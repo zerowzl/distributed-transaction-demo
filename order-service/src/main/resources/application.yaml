@@ -1,44 +1,44 @@
-server:
-  ip: 47.106.251.47
-  host: consul
-  port: 8999
-
-spring:
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
-    default-property-inclusion: NON_NULL
-
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${server.ip}:3306/distributed_order_service?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
-    username: dev_data
-    password: 6b4BnnmiczHEBZGs
-    type: com.zaxxer.hikari.HikariDataSource
-    hikari:
-      auto-commit: true
-      minimum-idle: 5
-      maximum-pool-size: 15
-      idle-timeout: 30000
-      pool-name: DatebookHikariCP
-      max-lifetime: 18000000
-      connection-timeout: 30000
-      connection-test-query: SELECT 1
-  rabbitmq:
-    host: ${server.ip}
-    port: 5672
-    username: guest
-    password: guest
-    ### 息消费者配置 ###
-    listener:
-      simple:
-        # 采用手动应答
-        acknowledge-mode: manual
-        # 当前监听容器数
-        concurrency: 1
-        # 最大数
-        max-concurrency: 1
-        # 是否支持重试
-        retry:
-          enabled: true
-
+#server:
+#  ip: 47.106.251.47
+#  host: consul
+#  port: 8999
+#
+#spring:
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#    default-property-inclusion: NON_NULL
+#
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://${server.ip}:3306/distributed_order_service?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+#    username: dev_data
+#    password: 6b4BnnmiczHEBZGs
+#    type: com.zaxxer.hikari.HikariDataSource
+#    hikari:
+#      auto-commit: true
+#      minimum-idle: 5
+#      maximum-pool-size: 15
+#      idle-timeout: 30000
+#      pool-name: DatebookHikariCP
+#      max-lifetime: 18000000
+#      connection-timeout: 30000
+#      connection-test-query: SELECT 1
+#  rabbitmq:
+#    host: ${server.ip}
+#    port: 5672
+#    username: guest
+#    password: guest
+#    ### 息消费者配置 ###
+#    listener:
+#      simple:
+#        # 采用手动应答
+#        acknowledge-mode: manual
+#        # 当前监听容器数
+#        concurrency: 1
+#        # 最大数
+#        max-concurrency: 1
+#        # 是否支持重试
+#        retry:
+#          enabled: true
+#

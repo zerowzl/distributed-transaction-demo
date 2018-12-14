@@ -17,11 +17,11 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class Transaction implements Serializable {
+public class Message implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String transactionId;
+    private String messageId;
 
     /**
      * 事务状态0待处理1已处理

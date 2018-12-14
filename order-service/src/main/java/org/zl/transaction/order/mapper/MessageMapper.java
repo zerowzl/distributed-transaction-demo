@@ -1,6 +1,6 @@
 package org.zl.transaction.order.mapper;
 
-import org.zl.transaction.order.entity.Transaction;
+import org.zl.transaction.order.entity.Message;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author zl
  * @since 2018-12-13
  */
-public interface TransactionMapper extends BaseMapper<Transaction> {
+public interface MessageMapper extends BaseMapper<Message> {
 
 }

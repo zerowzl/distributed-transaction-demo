@@ -1,6 +1,6 @@
 package org.zl.transaction.order.service;
 
-import org.zl.transaction.order.entity.Transaction;
+import org.zl.transaction.order.entity.Message;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author zl
  * @since 2018-12-13
  */
-public interface ITransactionService extends IService<Transaction> {
+public interface IMessageService extends IService<Message> {
 
 }
