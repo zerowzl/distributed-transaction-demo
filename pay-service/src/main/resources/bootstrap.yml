@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: distributed-pay-service
+  cloud:
+    consul:
+      host: consul
+      port: 8500
+      config:
+        enabled: true
+        prefix: config
+        name: distributed-pay-service
+        defaultContext: apps
+        profileSeparator: ','
+        format: YAML
+        watch:
+          enabled: true

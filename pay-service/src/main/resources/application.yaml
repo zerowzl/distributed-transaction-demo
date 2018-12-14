@@ -1,0 +1,40 @@
+server:
+  ip: 47.106.251.47
+  host: consul
+  port: 8998
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: NON_NULL
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${server.ip}:3306/distributed_pay_service?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: dev_data
+    password: 6b4BnnmiczHEBZGs
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      auto-commit: true
+      minimum-idle: 5
+      maximum-pool-size: 15
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 18000000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  rabbitmq:
+    host: ${server.ip}
+    port: 5672
+    username: guest
+    password: guest
+    ### 消息生产者配置 ###
+    # 支持发布确认
+    publisher-confirms: true
+    # 支持发布返回
+    publisher-returns: true
+
+logging:
+  level:
+    org.zl.transaction.pay: debug
